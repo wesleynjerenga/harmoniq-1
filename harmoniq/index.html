@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmoniq - Music App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Harmoniq</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for songs...">
+                <button id="search-button">Search</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="music-container">
+                <div class="player-section">
+                    <div class="now-playing">
+                        <img id="cover" src="images/default-cover.png" alt="Album Cover">
+                        <div class="track-info">
+                            <h2 id="title">No Track Selected</h2>
+                            <p id="artist">Select a track to play</p>
+                        </div>
+                        <div class="lyrics-container hidden" id="lyrics-container">
+                            <h3>Lyrics</h3>
+                            <div id="lyrics-content">No lyrics available</div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="prev" class="control-button">Previous</button>
+                        <button id="play" class="control-button">Play</button>
+                        <button id="next" class="control-button">Next</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress"></div>
+                        </div>
+                        <div class="time-container">
+                            <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="tabs">
+                        <button class="tab-button active" data-tab="search-results">Search Results</button>
+                        <button class="tab-button" data-tab="playlists">Playlists</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div id="search-results" class="tab-pane active">
+                            <ul id="results-list" class="track-list"></ul>
+                        </div>
+                        
+                        <div id="playlists" class="tab-pane">
+                            <div class="playlist-header">
+                                <h3>Your Playlists</h3>
+                                <div class="playlist-actions">
+                                    <input type="text" id="new-playlist-name" placeholder="New playlist name">
+                                    <button id="create-playlist">Create</button>
+                                </div>
+                            </div>
+                            <ul id="playlists-list" class="playlists-container"></ul>
+                            
+                            <div id="playlist-detail" class="playlist-detail hidden">
+                                <div class="playlist-info">
+                                    <h3 id="playlist-name">Playlist Name</h3>
+                                    <p id="playlist-tracks-count">0 tracks</p>
+                                </div>
+                                <ul id="playlist-tracks" class="track-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
